@@ -168,10 +168,8 @@ public class ContaCorrenteRepository {
 			ps.setString(1, "f");
 			ps.setInt(2, numAgencia);
 			ps.setInt(3, numContaCorrente);
-			int update = ps.executeUpdate();
-			if (update > 0) {
-				return getContaCorrente(numAgencia, numContaCorrente);
-			}
+			ps.executeUpdate();
+			return getContaCorrente(numAgencia, numContaCorrente);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
